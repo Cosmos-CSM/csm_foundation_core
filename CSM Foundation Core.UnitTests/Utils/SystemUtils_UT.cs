@@ -3,6 +3,9 @@
 namespace CSM_Foundation_Core.UnitTests.Utils;
 
 
+/// <summary>
+///     Tests class for <see cref="SystemUtils"/>.
+/// </summary>
 public class SystemUtils_UT {
 
 

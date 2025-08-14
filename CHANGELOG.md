@@ -4,7 +4,7 @@
 
 ### Added
 
-- 
+- [SystemUtils] class that handles easier the way that env vars can be handled.
 
 ### Fixed
 
