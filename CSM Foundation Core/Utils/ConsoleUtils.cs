@@ -8,7 +8,7 @@ using Details = System.Collections.Generic.Dictionary<string, object?>;
 namespace CSM_Foundation_Core.Utils;
 
 /// <summary>
-///     
+///     Provides utils methods related with the .Net Console integration.
 /// </summary>
 public static class ConsoleUtils {
 
@@ -114,7 +114,7 @@ public static class ConsoleUtils {
     public static void Exception(IException exception) {
         Write(
             "Exception",
-            exception.Subject,
+            exception.Message,
             ConsoleColor.DarkRed,
             new Details {
                     { "Message", exception.Message },
