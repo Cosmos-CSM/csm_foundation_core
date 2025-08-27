@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      
+
 permissions:
   contents: read
   packages: write
@@ -13,6 +13,9 @@ permissions:
 jobs:
   package_publish:
     runs-on: ubuntu-latest
+    
+    env:
+      CS_PROJECT_PATH: 'CSM Foundation Core/CSM Foundation Core.csproj'
 
     steps:
       - name: 🔄 Checkout repo
@@ -25,16 +28,16 @@ jobs:
 
       - name: 🔧 Restore & Build
         run: |
-          dotnet restore "CSM Foundation Core/CSM Foundation Core/CSM Foundation Core.csproj"
-          dotnet build   "CSM Foundation Core/CSM Foundation Core/CSM Foundation Core.csproj" \
+          dotnet restore "$CS_PROJECT_PATH"
+          dotnet build   "$CS_PROJECT_PATH" \
             --configuration Release
 
       - name: 📦 Pack NuGet project
         run: |
-          dotnet pack "CSM Foundation Core/CSM Foundation Core/CSM Foundation Core.csproj" \
+          dotnet pack "$CS_PROJECT_PATH" \
             --configuration Release \
             --output ./nupkgs
-  
+
       - name: 📤 Push to GitHub Packages
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.PUBLISH_PAT }}

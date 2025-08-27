@@ -15,11 +15,6 @@ public interface IException {
     string Message { get; }
 
     /// <summary>
-    ///     Exception main subject.
-    /// </summary>
-    string Subject { get; }
-
-    /// <summary>
     ///     Exception stacking trace.
     /// </summary>
     string? StackTrace { get; }
@@ -72,9 +67,6 @@ public abstract class BException<TEvent>
     : Exception, IException<TEvent>
     where TEvent : Enum {
 
-
-    public string Subject { get; init; }
-
     public string Advise { get; init; }
 
     public TEvent Event { get; init; }
@@ -103,10 +95,9 @@ public abstract class BException<TEvent>
     /// <param name="data">
     ///     Operation data relevant for analysis of the exception.
     /// </param>
-    public BException(string subject, TEvent @event, Exception? exception = null, ExceptionFeedback[]? feedback = null, IDictionary<string, object?>? data = null)
-        : base(subject) {
+    public BException(string message, TEvent @event, Exception? exception = null, ExceptionFeedback[]? feedback = null, IDictionary<string, object?>? data = null)
+        : base(message) {
 
-        Subject = subject;
         Event = @event;
         Exception = exception;
         Feedback = feedback ?? [];

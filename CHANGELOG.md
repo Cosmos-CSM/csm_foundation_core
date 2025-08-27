@@ -20,7 +20,27 @@
 
 ### Removed
 
-## [1.2.1] - 08.08-2025
+## [1.2.2] - 13.08-2025
+
+### Added
+
+- [XSystem] a generic base CSM framework exception for the integrated exception management.
+
+### Fixed
+
+### Changed
+
+#### Dependencies
+
+| Package                                 | Previous Version | New Version     |
+|:----------------------------------------|:----------------:|:---------------:|
+|                                         |                  |                 |
+
+### Removed
+
+- [IException] interface "subject" property got removed to use native .Net Excetion class Message property.
+
+## [1.2.1] - 13.08-2025
 
 ### Added
 
