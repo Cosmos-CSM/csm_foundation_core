@@ -4,7 +4,7 @@
         <TargetFramework>net8.0</TargetFramework>
         <RootNamespace>CSM_Foundation_Core</RootNamespace>
 		<PackageId>CSM.Foundation.Core</PackageId>
-		<Version>1.2.2</Version>
+		<Version>1.2.3</Version>
 		<Authors>Renato Urrea</Authors>
 		<Company>Cosmos (CSM)</Company>
 		<RepositoryUrl>https://github.com/Cosmos-CSM/csm_foundation_core</RepositoryUrl>
