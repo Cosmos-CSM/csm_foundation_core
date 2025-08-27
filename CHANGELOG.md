@@ -1,6 +1,6 @@
 # CSM Foundation Core CHANGELOG
 
-## [X.X.X] - XX.XX-XXXX
+## [1.2.3] - 27.08-2025
 
 ### Added
 
