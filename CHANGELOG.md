@@ -1,5 +1,25 @@
 # CSM Foundation Core CHANGELOG
 
+## [X.X.X] - XX.XX-XXXX
+
+### Added
+
+#### [SystemUtils]
+
+- Added a new method (GetEnv) that gets and returns the current system runtime environment scope.
+
+### Fixed
+
+### Changed
+
+#### Dependencies
+
+| Package                                 | Previous Version | New Version     |
+|:----------------------------------------|:----------------:|:---------------:|
+|                                         |                  |                 |
+
+### Removed
+
 ## [1.2.2] - 13.08-2025
 
 ### Added
