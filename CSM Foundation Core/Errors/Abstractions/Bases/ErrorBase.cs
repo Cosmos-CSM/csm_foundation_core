@@ -1,61 +1,7 @@
-﻿using System.Text.Json.Serialization;
+﻿using CSM_Foundation_Core.Errors.Abstractions.Interfaces;
+using CSM_Foundation_Core.Errors.Models;
 
-using CSM_Foundation_Core.Exceptions.Models;
-
-namespace CSM_Foundation_Core.Exceptions;
-
-/// <summary>
-///     Represents a CSM Exception thrown by the system.
-/// </summary>
-public interface IException {
-
-    /// <summary>
-    ///     Exception message.
-    /// </summary>
-    string Message { get; }
-
-    /// <summary>
-    ///     Exception stacking trace.
-    /// </summary>
-    string? StackTrace { get; }
-
-    /// <summary>
-    ///     An user friendly message, meant to be displayed instead of the complex framework exception messages.
-    /// </summary>
-    string Advise { get; }
-
-    /// <summary>
-    ///     The internal system exception object caught.
-    /// </summary>
-    Exception? Exception { get; }
-
-    /// <summary>
-    ///     Exception feedback data.
-    /// </summary>
-    ExceptionFeedback[] Feedback { get; }
-
-    /// <summary>
-    ///     Data relevant during operation that triggered the exception.
-    /// </summary>
-    [JsonIgnore]
-    IDictionary<string, object?> Data { get; }
-}
-
-/// <summary>
-///     Represents a CSM Exception thrown by the system.
-/// </summary>
-/// <typeparam name="TEvent">
-///     Exception scoped reasons enumerator.
-/// </typeparam>
-public interface IException<TEvent>
-    : IException
-    where TEvent : Enum {
-
-    /// <summary>
-    ///     Exception trigger event.
-    /// </summary>
-    TEvent Event { get; }
-}
+namespace CSM_Foundation_Core.Errors.Abstractions.Bases;
 
 /// <summary>
 ///     Represents a CSM Exception thrown by the system.
@@ -63,7 +9,7 @@ public interface IException<TEvent>
 /// <typeparam name="TEvent">
 ///     Exception scoped event enumerator.
 /// </typeparam>
-public abstract class BException<TEvent>
+public abstract class ErrorBase<TEvent>
     : Exception, IException<TEvent>
     where TEvent : Enum {
 
@@ -73,7 +19,7 @@ public abstract class BException<TEvent>
 
     public Exception? Exception { get; init; }
 
-    public ExceptionFeedback[] Feedback { get; init; }
+    public ErrorFeedback[] Feedback { get; init; }
 
     public new IDictionary<string, object?> Data { get; init; }
 
@@ -95,7 +41,7 @@ public abstract class BException<TEvent>
     /// <param name="data">
     ///     Operation data relevant for analysis of the exception.
     /// </param>
-    public BException(string message, TEvent @event, Exception? exception = null, ExceptionFeedback[]? feedback = null, IDictionary<string, object?>? data = null)
+    public ErrorBase(string message, TEvent @event, Exception? exception = null, ErrorFeedback[]? feedback = null, IDictionary<string, object?>? data = null)
         : base(message) {
 
         Event = @event;

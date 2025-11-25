@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Reflection;
 
-namespace CSM_Foundation_Core.Utils;
+namespace CSM_Foundation_Core.Core.Utils;
 public static class GenericUtils {
     public static TObject DeepCopy<TObject>(this TObject target, bool isParentProperty = true, Dictionary<object, object>? visited = null) {
         visited ??= [];

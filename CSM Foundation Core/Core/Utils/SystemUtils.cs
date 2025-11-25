@@ -1,7 +1,6 @@
-﻿
-using CSM_Foundation_Core.Exceptions;
+﻿using CSM_Foundation_Core.Errors.Abstractions.Bases;
 
-namespace CSM_Foundation_Core.Utils;
+namespace CSM_Foundation_Core.Core.Utils;
 
 
 /// <summary>
@@ -40,7 +39,7 @@ public enum XSystemUtilsEvents {
 ///     Represents an exception thrown by <see cref="SystemUtils"/> operations.
 /// </summary>
 public class XSystemUtils
-    : BException<XSystemUtilsEvents> {
+    : ErrorBase<XSystemUtilsEvents> {
 
     /// <summary>
     ///     Creates a new instance.

@@ -1,4 +1,4 @@
-﻿namespace CSM_Foundation_Core.Exceptions.Models;
+﻿namespace CSM_Foundation_Core.Errors.Models;
 
 /// <summary>
 ///     Enumerates the severity of the exception feedback.
@@ -21,7 +21,7 @@ public enum ExceptionFeedbackSeverity {
 /// <summary>
 ///     Represents a solution user friendly exception feedback message.
 /// </summary>
-public record ExceptionFeedback {
+public record ErrorFeedback {
 
     /// <summary>
     ///     Feedback message.

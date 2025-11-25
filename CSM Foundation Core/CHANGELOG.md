@@ -1,5 +1,20 @@
 # CSM Foundation Core CHANGELOG
 
+## [2.0.0] - 24.11-2025
+
+### Changed
+
+- Renamed and reorganized the project structure to CSM Foundation Core to better reflect its purpose as a foundational library for CSM systems.
+- Changed concept from [Exception] to [Error].
+
+#### Dependencies
+
+| Package                                 | Previous Version | New Version     |
+|:----------------------------------------|:----------------:|:---------------:|
+|                                         |                  |                 |
+
+### Removed
+
 ## [1.3.0] - 27.08-2025
 
 ### Added

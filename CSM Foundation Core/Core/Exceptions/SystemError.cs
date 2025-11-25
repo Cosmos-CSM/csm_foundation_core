@@ -1,14 +1,13 @@
-﻿
+﻿using CSM_Foundation_Core.Errors.Abstractions.Bases;
+using CSM_Foundation_Core.Errors.Models;
 
-using CSM_Foundation_Core.Exceptions.Models;
-
-namespace CSM_Foundation_Core.Exceptions;
+namespace CSM_Foundation_Core.Core.Exceptions;
 
 
 /// <summary>
-///     Represents exception triggering events for <see cref="XSystem"/>.
+///     Represents exception triggering events for <see cref="SystemError"/>.
 /// </summary>
-public enum XSystemEvents {
+public enum SystemErrorEvents {
 
     /// <summary>
     ///     The inner framework related validations triggered an exception.
@@ -19,8 +18,8 @@ public enum XSystemEvents {
 /// <summary>
 ///     Represents a CSM native framework exception in order to provide solutions from a basic exception management system integrated.
 /// </summary>
-public class XSystem
-    : BException<XSystemEvents> {
+public class SystemError
+    : ErrorBase<SystemErrorEvents> {
 
     /// <summary>
     ///     Creates a new instance.
@@ -37,7 +36,7 @@ public class XSystem
     /// <param name="data">
     ///     Internal debugging exception data.
     /// </param>
-    public XSystem(string message, Exception? frameworkException = null, ExceptionFeedback[]? feedback = null, IDictionary<string, object?>? data = null)
-        : base(message, XSystemEvents.FRAMEWORK, frameworkException, feedback ?? [], data ?? new Dictionary<string, object?>()) {
+    public SystemError(string message, Exception? frameworkException = null, ErrorFeedback[]? feedback = null, IDictionary<string, object?>? data = null)
+        : base(message, SystemErrorEvents.FRAMEWORK, frameworkException, feedback ?? [], data ?? new Dictionary<string, object?>()) {
     }
 }

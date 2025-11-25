@@ -1,6 +1,7 @@
-﻿using CSM_Foundation_Core.Utils;
+﻿using CSM_Foundation_Core;
+using CSM_Foundation_Core.Core.Utils;
 
-namespace CSM_Foundation_Core.UnitTests.Utils;
+namespace Unit_Tests.Utils;
 
 
 /// <summary>

@@ -1,15 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace CSM_Foundation_Core.Convertion;
+namespace CSM_Foundation_Core.Convertion.Abstractions.Interfaces;
 
 /// <summary>
-///     Interface to determine a variation to the <see cref="BConverter{T}"/> implementation.
+///     Represents a <see cref="IConverter{TBase}"/> handled variant.
 /// </summary>
-public interface IConverterVariation {
+public interface IConverterVariant {
 
     /// <summary>
-    ///     Unique operation time variation identification for transaction convertions.
+    ///     Unique runtime variation identification for transaction convertions.
     ///     
     ///     <para> 
     ///         Additional has <see cref="JsonPropertyOrderAttribute"/> set as 0 to always be the first
@@ -17,5 +17,5 @@ public interface IConverterVariation {
     ///     </para>
     /// </summary>
     [JsonPropertyOrder(0), NotMapped]
-    string Discriminator { get; init; }
+    string Discriminator { get; }
 }
