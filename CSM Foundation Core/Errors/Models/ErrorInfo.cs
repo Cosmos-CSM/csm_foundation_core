@@ -1,13 +1,13 @@
-﻿namespace CSM_Foundation_Core.Exceptions.Models;
+﻿namespace CSM_Foundation_Core.Errors.Models;
 
 /// <summary>
-///     {model} record for <see cref="ExceptionInfo"/>.
+///     {model} record for <see cref="ErrorInfo"/>.
 ///     
 ///     <para>
 ///         Stores public information to expose an Exception details.
 ///     </para>
 /// </summary>
-public record ExceptionInfo {
+public record ErrorInfo {
     /// <summary>
     ///     Where the exception got thrown.
     /// </summary>

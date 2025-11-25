@@ -1,4 +1,4 @@
-﻿namespace CSM_Foundation_Core.Extensions;
+﻿namespace CSM_Foundation_Core.Core.Extensions;
 public static class DateTimeExtensions {
 
     public static DateTime Trim(this DateTime Current) {

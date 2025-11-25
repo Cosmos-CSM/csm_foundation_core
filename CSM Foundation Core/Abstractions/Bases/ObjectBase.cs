@@ -2,13 +2,13 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace CSM_Foundation_Core;
+namespace CSM_Foundation_Core.Abstractions.Bases;
 
 /// <summary>
 ///     Represents an inheritance link between datasource objects
 ///     that need specific equality comparisson between their properties.
 /// </summary>
-public abstract class BObject<TObject> {
+public abstract class ObjectBase<TObject> {
 
     public override bool Equals(object? comparer) {
         PropertyInfo[] exceptions = [];

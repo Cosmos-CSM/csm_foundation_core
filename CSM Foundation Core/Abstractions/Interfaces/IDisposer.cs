@@ -1,4 +1,4 @@
-﻿namespace CSM_Foundation_Core;
+﻿namespace CSM_Foundation_Core.Abstractions.Interfaces;
 
 /// <summary>
 ///     Represents a disposition manager wich stores objects in their context to be disposed at the end of a process.

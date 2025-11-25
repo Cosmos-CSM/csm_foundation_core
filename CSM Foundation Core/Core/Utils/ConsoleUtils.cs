@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;
 
-using CSM_Foundation_Core.Exceptions;
+using CSM_Foundation_Core.Errors.Abstractions.Interfaces;
 
 using Detail = System.Collections.Generic.KeyValuePair<string, object?>;
 using Details = System.Collections.Generic.Dictionary<string, object?>;
 
-namespace CSM_Foundation_Core.Utils;
+namespace CSM_Foundation_Core.Core.Utils;
 
 /// <summary>
 ///     Provides utils methods related with the .Net Console integration.
@@ -111,7 +111,7 @@ public static class ConsoleUtils {
     /// <param name="exception">
     ///     Exception to write down into the console.
     /// </param>
-    public static void Exception(IException exception) {
+    public static void Exception(IError exception) {
         Write(
             "Exception",
             exception.Message,
