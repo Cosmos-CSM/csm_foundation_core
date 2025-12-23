@@ -67,8 +67,11 @@ public static class SystemUtils {
     /// <param name="varKey">
     ///     Variable key.
     /// </param>
-    public static string? GetVar(string varKey) {
-        string? var = Environment.GetEnvironmentVariable(varKey);
+    /// <param name="target">
+    ///     Variable context target.
+    /// </param>
+    public static string? GetVar(string varKey, EnvironmentVariableTarget target = EnvironmentVariableTarget.Process) {
+        string? var = Environment.GetEnvironmentVariable(varKey, target);
 
         return var;
     }
