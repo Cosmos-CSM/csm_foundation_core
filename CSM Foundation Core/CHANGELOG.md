@@ -1,5 +1,17 @@
 # CSM Foundation Core CHANGELOG
 
+## [2.1.0] - 22.12-2025
+
+### Changed
+
+- Changed a SystemUtils method [GetVar] to allow env context target.
+
+#### Dependencies
+
+| Package                                 | Previous Version | New Version     |
+|:----------------------------------------|:----------------:|:---------------:|
+|                                         |                  |                 |
+
 ## [2.0.0] - 24.11-2025
 
 ### Changed
