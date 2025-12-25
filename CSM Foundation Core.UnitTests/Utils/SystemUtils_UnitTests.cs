@@ -91,7 +91,9 @@ public class SystemUtils_UnitTests {
 
     [Fact(DisplayName = "[GetGlobalVar(varKey)]: Correctly gets the expected variable value from the target")]
     public void GetsGlobalVarMapped() {
-        
+        if (!OperatingSystem.IsWindows())
+            return;
+
         string expectedValue = "USER_VAR";
 
         // --> First we want to get from User not Process
