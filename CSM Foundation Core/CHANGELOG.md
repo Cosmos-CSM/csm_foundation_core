@@ -1,5 +1,21 @@
 # CSM Foundation Core CHANGELOG
 
+## [2.1.1] - 24.12-2025
+
+### Changed
+
+- Changed a SystemUtils method [SetVar] to allow env context target.
+
+### Added
+
+- Added a new method to [SystemUtils] named [GetGlobalVar] that maps all available environment variables target contexts to get the value.
+
+#### Dependencies
+
+| Package                                 | Previous Version | New Version     |
+|:----------------------------------------|:----------------:|:---------------:|
+|                                         |                  |                 |
+
 ## [2.1.0] - 22.12-2025
 
 ### Changed

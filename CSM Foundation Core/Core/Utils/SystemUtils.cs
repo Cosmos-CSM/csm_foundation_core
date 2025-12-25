@@ -77,6 +77,37 @@ public static class SystemUtils {
     }
 
     /// <summary>
+    ///     Gets a variable from all the available environemnt targets, using the following order: 1. Machine, 2. User, 3. Process.
+    ///     If it doesn't get a value will fallback to the next available target, until it gets a value.
+    /// </summary>
+    /// <param name="varKey">
+    ///     Variable key.
+    /// </param>
+    /// <returns>
+    ///     Variable value.
+    /// </returns>
+    public static string? GetGlobalVar(string varKey) {
+        EnvironmentVariableTarget[] targetsSequence = [
+                EnvironmentVariableTarget.Machine,
+                EnvironmentVariableTarget.User,
+                EnvironmentVariableTarget.Process,
+            ];
+
+        string? envVarValue = null;
+        foreach (EnvironmentVariableTarget target in targetsSequence) { 
+            if(!string.IsNullOrWhiteSpace(envVarValue))
+                break;
+            
+
+            envVarValue = GetVar(varKey, target);
+            if(!string.IsNullOrWhiteSpace(envVarValue))
+                break;
+        }
+
+        return envVarValue;
+    }
+
+    /// <summary>
     ///     Sets a system environment variable.
     /// </summary>
     /// <param name="varKey">
@@ -85,8 +116,11 @@ public static class SystemUtils {
     /// <param name="varValue">
     ///     Variable value.
     /// </param>
-    public static void SetVar(string varKey, string? varValue) {
-        Environment.SetEnvironmentVariable(varKey, varValue);
+    /// <param name="target">
+    ///     Environment variable target context.
+    /// </param>
+    public static void SetVar(string varKey, string? varValue, EnvironmentVariableTarget target = EnvironmentVariableTarget.Process) {
+        Environment.SetEnvironmentVariable(varKey, varValue, target);
     }
 
 
