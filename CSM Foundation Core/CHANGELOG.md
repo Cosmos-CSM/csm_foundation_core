@@ -1,5 +1,17 @@
 # CSM Foundation Core CHANGELOG
 
+## [3.0.0] - 25.12-2025
+
+### Remved
+
+- Removed from errors model [ErrorInfo] since it was only needed when internal errors are exposed to connected services with critical information.
+
+#### Dependencies
+
+| Package                                 | Previous Version | New Version     |
+|:----------------------------------------|:----------------:|:---------------:|
+|                                         |                  |                 |
+
 ## [2.1.1] - 24.12-2025
 
 ### Changed
