@@ -15,6 +15,11 @@ public interface IError {
     string Message { get; }
 
     /// <summary>
+    ///     Generic event object value.
+    /// </summary>
+    public object EventCode { get; }
+
+    /// <summary>
     ///     Exception stacking trace.
     /// </summary>
     string? StackTrace { get; }
@@ -51,8 +56,5 @@ public interface IException<TEvent>
     : IError
     where TEvent : Enum {
 
-    /// <summary>
-    ///     Exception trigger event.
-    /// </summary>
     TEvent Event { get; }
 }

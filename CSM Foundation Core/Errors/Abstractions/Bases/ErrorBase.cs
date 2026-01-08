@@ -17,6 +17,8 @@ public abstract class ErrorBase<TEvent>
 
     public TEvent Event { get; init; }
 
+    public object EventCode { get => Convert.ToInt32(Event); }
+
     public Exception? Exception { get; init; }
 
     public ErrorFeedback[] Feedback { get; init; }
